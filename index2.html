@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TEST</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style>
+		header {
+			padding: 20px 50px;
+			background: silver;
+			margin-bottom: 50px;
+		}
+
+		header a {
+			margin-right: 60px;
+		}
+
+		img {
+			max-width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<a href="index1.html">INDEX 1</a>
+		<a href="index2.html">INDEX 2</a>
+	</header>
+
+	<img src="banner.php" alt="img">
+
+	<script>
+		$(document).ready(function() {
+			
+			$('img').on('load', function() {
+				var data = {
+		            
+		        };
+		        $.ajax({
+		            url: 'banner.php',
+		            type: 'POST',
+		            data: data,
+		            dataType: "json",
+		            success: function (response) {
+		                
+		            },
+		            error: function (err) {
+
+		            }
+		        });
+
+			});
+		});
+	</script>
+</body>
+</html>
